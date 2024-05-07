@@ -1,20 +1,13 @@
-/**
- * Debugging Guide
- * 1. Make the code more readable
- * 2. Pick up calculation errors
- * 3. Make these calculations robust such that the calculation does not give an incorrect result, it throws an error to the user if something has gone wrong (parameter used with an incorrect unit of measurement, etc)
- */
-
-// Given Parameters
-const vel = 10000; // velocity (km/h)
-const acc = 3; // acceleration (m/s^2)
-const time = 3600; // seconds (1 hour)
-const d = 0; // distance (km)
-const fuel = 5000; // remaining fuel (kg)
-const fbr = 0.5; // fuel burn rate (kg/s)
+// Given Parameters' names changed, units added to variable and labelling comments adjusted for clarity.
+const velocity = {value: 10000, units: 'km/h'}; // velocity in kilometres per hour (km/h)
+const acceleration = {value: 3, units: 'm/s^2'}; // acceleration in metres per second squared (ms^2)
+const time = {value: 3600, units: 's'}; // duration in seconds (s)
+const distance = {value: 0, units: 'km'}; // distance in kilometres (km)
+const remainingFuel = {value: 5000, units: 'kg'}; // remaining fuel in kilograms (kg)
+const fuelBurnRate = {value: 0.5, units: 'kg/s'}; // fuel burn rate in kilograms per second (kg/s)
 
 
-const d2 = d + (vel*time) //calcultes new distance
+const d2 = d + (velocity*time) //calcultes new distance
 const rf = fbr*time //calculates remaining fuel
 const vel2 = calcNewVel(acc, vel, time) //calculates new velocity based on acceleration
 
